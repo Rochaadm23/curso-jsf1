@@ -17,7 +17,7 @@
 
 		<br />
 
-		<h:commandButton value="Cadastrar Nome" action="#{pessoaBean.addNome}" />
+		<h:commandButton binding="#{pessoaBean.commandButton}" value="Cadastrar Nome" action="#{pessoaBean.addNome}" />
 
 		<h:dataTable value="#{pessoaBean.nomes}" var="n">
 
