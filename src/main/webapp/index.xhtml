@@ -6,14 +6,28 @@
 
 <h:head>
 	<title>Olá JSF</title>
+	
+	<script>
+		function alterarValorDoCampo() {
+			var campo = document.getElementById('formPessoa:nome')
+			campo.value = 'eu cliquei'
+		}
+	</script>
 </h:head>
 
 <h:body>
 
 	<h:form id="formPessoa">
-		
+
 		<h1>JSF</h1>
-		<h:commandButton value="Navegar" action="pagina1"/>
+
+		<h:inputText id="nome" />
+		<h:commandButton value="Clicar" onclick="alterarValorDoCampo();"/>
+
+		<br />
+		<br />
+
+		<h:commandButton value="Navegar" action="pagina1" />
 
 	</h:form>
 
