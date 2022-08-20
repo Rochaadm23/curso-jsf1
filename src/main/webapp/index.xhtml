@@ -12,22 +12,8 @@
 
 	<h:form id="formPessoa">
 		
-		Nome:
-        <h:inputText id="campoNome" value="#{pessoaBean.nome}"></h:inputText>
-
-		<br />
-
-		<h:commandButton binding="#{pessoaBean.commandButton}" value="Cadastrar Nome" action="#{pessoaBean.addNome}" />
-
-		<h:dataTable value="#{pessoaBean.nomes}" var="n">
-
-			<h:column>
-				<h:outputText value="#{n}" />
-			</h:column>
-
-		</h:dataTable>
-
-
+		<h1>JSF</h1>
+		<h:commandButton value="Navegar" action="pagina1"/>
 
 	</h:form>
 
