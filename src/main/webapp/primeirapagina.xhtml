@@ -19,17 +19,17 @@
 		<br />
 
 		<h:outputLabel value="Nome:" />
-		<h:inputText value="#{pessoaBean.pessoa.nome}" />
+		<h:inputText value="#{pessoaBean.pessoa.nome}" required="true"/>
 
 		<br />
 
 		<h:outputLabel value="Sobrenome:" />
-		<h:inputText value="#{pessoaBean.pessoa.sobrenome}" />
+		<h:inputText value="#{pessoaBean.pessoa.sobrenome}" required="true" />
 
 		<br />
 
 		<h:outputLabel value="Idade:" />
-		<h:inputText value="#{pessoaBean.pessoa.idade}" />
+		<h:inputText value="#{pessoaBean.pessoa.idade}" required="true"/>
 
 		<br />
 		<!-- 
@@ -42,6 +42,24 @@
 		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
 
 		<h:commandButton value="Remove" action="#{pessoaBean.remove}" />
+
+		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
+			<h:column>
+				<h:outputText value="#{pessoa.id}" />
+			</h:column>
+
+			<h:column>
+				<h:outputText value="#{pessoa.nome}" />
+			</h:column>
+
+			<h:column>
+				<h:outputText value="#{pessoa.sobrenome}" />
+			</h:column>
+
+			<h:column>
+				<h:outputText value="#{pessoa.idade}" />
+			</h:column>
+		</h:dataTable>
 	</h:form>
 
 
