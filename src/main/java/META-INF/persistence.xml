@@ -13,13 +13,13 @@
 			<!-- Dados de conexão com o DB -->
 
 			<property name="hibernate.connection.driver_class"
-				value="org.postgresql.Driver" />
+				value="oracle.jdbc.OracleDriver" />
 			<property name="hibernate.connection.url"
-				value="jdbc:postgresql://localhost:5432/bdjsf1" />
+				value="jdbc:oracle:thin:@localhost:1521:xe" />
 			<property name="hibernate.dialect"
-				value="org.hibernate.dialect.PostgreSQL82Dialect" />
+				value="org.hibernate.dialect.Oracle10gDialect" />
 			<property name="hibernate.connection.username"
-				value="postgres" />
+				value="devjava" />
 			<property name="hibernate.connection.password"
 				value="12345678" />
 			<property name="hibernate.format_sql" value="false" />
