@@ -13,10 +13,15 @@ public class JPAUtil {
 			factory = Persistence.createEntityManagerFactory("projetojsf1");
 		}
 	}
-	
+
 	public static EntityManager getEntityManager() {
-		
+
 		return factory.createEntityManager();
+	}
+	
+	// Busca uma entidade e retorna o ID
+	public static Object getPrimaryKey(Object entity) {
+		return factory.getPersistenceUnitUtil().getIdentifier(entity);
 	}
 
 }
