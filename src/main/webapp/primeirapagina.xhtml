@@ -11,10 +11,29 @@
 <h:body>
 
 	<h:form id="formPessoa">
-		<h1>Olá navegação dinâmica</h1>
+		<h1>RSEC Information</h1>
 
+		<h:outputLabel value="Nome:" />
+		<h:inputText value="#{pessoaBean.pessoa.nome}" />
 
+		<br />
 
+		<h:outputLabel value="Sobrenome:" />
+		<h:inputText value="#{pessoaBean.pessoa.sobrenome}" />
+
+		<br />
+
+		<h:outputLabel value="Idade:" />
+		<h:inputText value="#{pessoaBean.pessoa.idade}" />
+
+		<br />
+		<!-- 
+		<h:outputLabel value="Data de Nascimento:"/>
+		<h:inputText value="#{pessoaBean.pessoa.dataNascimento}" />
+		 -->
+		<br />
+
+		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
 	</h:form>
 
 

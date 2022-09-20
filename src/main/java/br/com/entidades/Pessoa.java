@@ -89,4 +89,10 @@ public class Pessoa implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 
+	@Override
+	public String toString() {
+		return "id: " + id + ", nome: " + nome + ", sobrenome: " + sobrenome + ", idade: " + idade
+				+ ", dataNascimento: " + dataNascimento;
+	}
+
 }
