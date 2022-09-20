@@ -16,7 +16,7 @@ public class PessoaBean {
 	public String salvar() {
 		daoGeneric.salvar(pessoa);
 		
-		return pessoa.toString();
+		return "";
 	}
 	
 	public Pessoa getPessoa() {
