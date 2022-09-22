@@ -30,6 +30,8 @@ public class Pessoa implements Serializable {
 
 	private String sexo;
 
+	private String[] frameworks;
+	
 	public Pessoa() {
 
 	}
@@ -97,6 +99,14 @@ public class Pessoa implements Serializable {
 			return false;
 		Pessoa other = (Pessoa) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	public String[] getFrameworks() {
+		return frameworks;
+	}
+
+	public void setFrameworks(String[] frameworks) {
+		this.frameworks = frameworks;
 	}
 
 }
