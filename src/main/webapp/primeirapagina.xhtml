@@ -12,7 +12,11 @@
 <h:body>
 
 	<h:form id="formPessoa">
+
+		<h:graphicImage height="70" width="70" library="img" name="logotipo.gif" />
+
 		<h1>RSEC Information</h1>
+
 		<h:panelGrid columns="2">
 			<f:facet name="header">
 				<h:outputText value="Cadastro em JSF" />
@@ -45,7 +49,8 @@
 
 
 
-		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="4" cellpadding="5">
+		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="4"
+			cellpadding="5">
 
 			<f:facet name="header">
 				Lista de pessoas Cadastradas
