@@ -6,21 +6,16 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<title>JSF</title>
+	<title>Cadastro de usuário</title>
 </h:head>
 
 <h:body>
 
 	<h:form id="formPessoa">
 
-		<h:graphicImage height="70" width="70" library="img"
-			name="logotipo.gif" />
-
-		<h1>RSEC Information</h1>
-
 		<h:panelGrid columns="2">
 			<f:facet name="header">
-				<h:outputText value="Cadastro em JSF" />
+				<h:outputText value="Cadastro de usuário" />
 			</f:facet>
 			<h:outputLabel value="Id:" />
 			<h:inputText value="#{pessoaBean.pessoa.id}" readonly="false" />
@@ -57,7 +52,26 @@
 			<h:outputLabel value="Ativo:" />
 			<h:selectBooleanCheckbox value="#{pessoaBean.pessoa.ativo}" />
 
-
+			<h:outputLabel value="Login">
+				<h:inputText value="#{pessoaBean.pessoa.login}"/>
+			</h:outputLabel>
+			
+			<h:outputLabel value="Senha">
+				<h:inputSecret value="#{pessoaBean.pessoa.senha}"/>
+			</h:outputLabel>
+			
+			<!-- DEFINE O PERFIL DO USUÁRIO -->
+			<h:outputLabel value="Perfil:" />
+			<h:selectOneMenu id="campoPerfilUser" value="#{pessoaBean.pessoa.perfilUser}"
+				required="false">
+				<f:selectItem itemValue="NAO" itemLabel="[-Selecione-]"
+					noSelectionOption="true" />
+				<f:selectItem itemValue="ADMINISTRADOR" itemLabel="Administrador" />
+				<f:selectItem itemValue="SECRETARIO" itemLabel="Secretário" />
+				<f:selectItem itemValue="RECEPCIONISTA" itemLabel="Recepcionista" />
+			</h:selectOneMenu>
+			
+			<!-- PAINEL COM OPÇÕES DE NOVO, EDIÇÃO, E EXCLUSÃO -->
 			<h:outputLabel />
 			<h:panelGroup>
 				<h:commandButton value="Novo" action="#{pessoaBean.novo}"
@@ -86,7 +100,7 @@
 			cellpadding="5">
 
 			<f:facet name="header">
-				Lista de pessoas Cadastradas
+				Usuários cadastrados
 			</f:facet>
 
 			<h:column>
@@ -113,8 +127,8 @@
 				<f:facet name="header">Editar</f:facet>
 				<h:commandLink>
 					<f:setPropertyActionListener value="#{pessoa}"
-						target="#{pessoaBean.pessoa}"/>
-					<h:graphicImage value="/resources/img/edit_2321.png" title="Editar"/>
+						target="#{pessoaBean.pessoa}" />
+					<h:graphicImage value="/resources/img/edit_2321.png" title="Editar" />
 				</h:commandLink>
 			</h:column>
 
@@ -123,7 +137,8 @@
 				<h:commandLink action="#{pessoaBean.remove}">
 					<f:setPropertyActionListener value="#{pessoa}"
 						target="#{pessoaBean.pessoa}" />
-					<h:graphicImage value="/resources/img/delete_2348.png" title="Excluir"/>
+					<h:graphicImage value="/resources/img/delete_2348.png"
+						title="Excluir" />
 				</h:commandLink>
 			</h:column>
 		</h:dataTable>
