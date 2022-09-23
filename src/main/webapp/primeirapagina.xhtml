@@ -35,33 +35,42 @@
 			<h:inputText value="#{pessoaBean.pessoa.idade}" required="false" />
 
 			<h:outputLabel value="Sexo:" />
-			<h:selectOneMenu id="campoSexo" value="#{pessoaBean.pessoa.sexo}" required="false">
+			<h:selectOneMenu id="campoSexo" value="#{pessoaBean.pessoa.sexo}"
+				required="false">
 				<f:selectItem itemValue="NAO" itemLabel="[-Selecione-]"
 					noSelectionOption="true" />
 				<f:selectItem itemValue="M" itemLabel="Masculino" />
 				<f:selectItem itemValue="F" itemLabel="Feminino" />
 			</h:selectOneMenu>
-			
+
 			<h:outputLabel value="Frameworks:" />
-			<h:selectManyMenu id="campoFrameworks"  style="height:150px" value="#{pessoaBean.pessoa.frameworks}">
+			<h:selectManyMenu id="campoFrameworks" style="height:150px"
+				value="#{pessoaBean.pessoa.frameworks}">
 				<f:selectItem itemValue="Hibernate" />
 				<f:selectItem itemValue="Spring Mvc" />
 				<f:selectItem itemValue="Jpa" />
 				<f:selectItem itemValue="PrimeFaces" />
 				<f:selectItem itemValue="JSF" />
-				
+
 			</h:selectManyMenu>
 
 			<h:outputLabel value="Ativo:" />
-			<h:selectBooleanCheckbox value="#{pessoaBean.pessoa.ativo}"/>
-			 
+			<h:selectBooleanCheckbox value="#{pessoaBean.pessoa.ativo}" />
+
 
 			<h:outputLabel />
 			<h:panelGroup>
-				<h:commandButton value="Novo" action="#{pessoaBean.novo}" />
-				<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
-				<h:commandButton value="Remove" action="#{pessoaBean.remove}" />
-				<h:commandButton value="Limpar" type="reset"/>
+				<h:commandButton value="Novo" action="#{pessoaBean.novo}"
+					image="/resources/img/new_add_user_167344.png" title="Novo" />
+
+				<h:commandButton value="Salvar" action="#{pessoaBean.salvar}"
+					image="/resources/img/Save_37110.png" title="Salvar" />
+
+				<h:commandButton value="Remove" action="#{pessoaBean.remove}"
+					image="/resources/img/delete_2348.png" title="Excluir" />
+
+				<h:commandButton value="Limpar" type="reset"
+					image="/resources/img/eraser_82491.png" title="Limpar" />
 
 			</h:panelGroup>
 			<!-- 
@@ -102,17 +111,19 @@
 
 			<h:column>
 				<f:facet name="header">Editar</f:facet>
-				<h:commandLink value="Editar">
+				<h:commandLink>
 					<f:setPropertyActionListener value="#{pessoa}"
-						target="#{pessoaBean.pessoa}"></f:setPropertyActionListener>
+						target="#{pessoaBean.pessoa}"/>
+					<h:graphicImage value="/resources/img/edit_2321.png" title="Editar"/>
 				</h:commandLink>
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">Excluir</f:facet>
-				<h:commandLink value="Excluir" action="#{pessoaBean.remove}">
+				<h:commandLink action="#{pessoaBean.remove}">
 					<f:setPropertyActionListener value="#{pessoa}"
-						target="#{pessoaBean.pessoa}"></f:setPropertyActionListener>
+						target="#{pessoaBean.pessoa}" />
+					<h:graphicImage value="/resources/img/delete_2348.png" title="Excluir"/>
 				</h:commandLink>
 			</h:column>
 		</h:dataTable>
