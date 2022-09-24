@@ -31,15 +31,15 @@ public class Pessoa implements Serializable {
 	private String sexo;
 
 	private String[] frameworks;
-	
+
 	private Boolean ativo;
-	
+
 	private String login;
-	
+
 	private String senha;
-	
+
 	private String perfilUser;
-	
+
 	public Pessoa() {
 
 	}

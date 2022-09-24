@@ -12,25 +12,7 @@
 
 	<h:form id="formPessoa">
 		
-		Nome:
-        <h:inputText id="campoNome" value="#{pessoaBean.nome}" />
-        Senha:
-		<h:inputSecret id="senha" value="#{pessoaBean.senha}" />
-		<br />
-		Reclamação:
-		<h:inputTextarea id="texto" value="#{pessoaBean.texto}" rows="10"
-			cols="10" />
-		<br />
-
-		<h:commandButton binding="#{pessoaBean.commandButton}"
-			value="Cadastrar Nome" action="#{pessoaBean.addNome}" />
-
-		<h:dataTable value="#{pessoaBean.nomes}" var="n">
-
-			<h:column>
-				<h:outputText value="#{n}" />
-			</h:column>
-
+		
 		</h:dataTable>
 
 
